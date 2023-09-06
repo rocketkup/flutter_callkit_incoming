@@ -169,7 +169,7 @@ class CallkitIncomingActivity : Activity() {
             ivAvatar.visibility = View.VISIBLE
             val headers = data.getSerializable(CallkitConstants.EXTRA_CALLKIT_HEADERS) as HashMap<String, Any?>
             getPicassoInstance(this@CallkitIncomingActivity, headers)
-                    .load(avatarUrl)
+                    .load(avatarUrl).resize(40,40)
                     .placeholder(R.drawable.ic_default_avatar)
                     .error(R.drawable.ic_default_avatar)
                     .into(ivAvatar)
